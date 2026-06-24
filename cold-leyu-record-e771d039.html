@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>leyu 专题 · 温和旅途</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f6f5f3;
+            color: #2c2b28;
+            line-height: 1.7;
+            letter-spacing: 0.01em;
+        }
+        .hero {
+            background: linear-gradient(135deg, #1a1d22 0%, #2d2f34 100%);
+            min-height: 65vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 2rem 3.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #c7a86b;
+        }
+        .hero h1 {
+            font-size: clamp(2.6rem, 9vw, 5rem);
+            font-weight: 300;
+            color: #ece7da;
+            letter-spacing: 0.12em;
+            margin-bottom: 0.5rem;
+        }
+        .hero h1 span {
+            display: inline-block;
+            background: #c7a86b;
+            color: #1a1d22;
+            padding: 0 0.45rem;
+            font-weight: 500;
+        }
+        .hero .sub {
+            max-width: 680px;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            color: #bab5a8;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3.5rem 1.8rem 4rem;
+        }
+        .intro-block {
+            background: #ffffff;
+            padding: 2.5rem 2.2rem;
+            border-radius: 28px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.02);
+            margin-bottom: 2.8rem;
+        }
+        .intro-block h2 {
+            font-size: 1.8rem;
+            font-weight: 350;
+            color: #1e1e1c;
+            border-left: 4px solid #c7a86b;
+            padding-left: 1.2rem;
+            margin-bottom: 1.2rem;
+        }
+        .intro-block p {
+            margin-bottom: 1.1rem;
+            font-size: 1.02rem;
+        }
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2.5rem 0 1.2rem;
+        }
+        .card {
+            flex: 1 1 260px;
+            background: #ffffff;
+            padding: 2rem 1.6rem;
+            border-radius: 24px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            border: 1px solid #eae7e0;
+            transition: transform 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: #c7a86b;
+        }
+        .card .num {
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: #c7a86b;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+        .card h3 {
+            font-weight: 400;
+            font-size: 1.3rem;
+            margin-bottom: 0.7rem;
+            color: #2a2825;
+        }
+        .card p {
+            color: #4a4844;
+            font-size: 0.98rem;
+        }
+        a {
+            color: #9a7d4b;
+            text-decoration: none;
+            padding-bottom: 1px;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        a:hover {
+            color: #1e1e1c;
+            border-bottom: 1px solid #c7a86b;
+        }
+        .faq-summary {
+            background: #f0ede7;
+            border-radius: 28px;
+            padding: 2.2rem 2.2rem;
+            margin: 1.8rem 0 2.2rem;
+        }
+        .faq-summary h3 {
+            font-weight: 400;
+            font-size: 1.3rem;
+            margin-bottom: 1.2rem;
+            color: #2c2b28;
+        }
+        .faq-item {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            align-items: baseline;
+        }
+        .faq-item .q {
+            font-weight: 450;
+            color: #3f3b34;
+            min-width: 5.2rem;
+        }
+        .faq-item .a {
+            color: #54514b;
+        }
+        .scene-note {
+            display: flex;
+            flex-wrap: wrap;
+            background: #fffcf6;
+            border-radius: 28px;
+            padding: 2rem 2.2rem;
+            margin: 2.2rem 0;
+            gap: 2rem;
+            border: 1px solid #e1dbd0;
+        }
+        .scene-note .left {
+            flex: 2 1 240px;
+        }
+        .scene-note .right {
+            flex: 1 1 160px;
+            text-align: right;
+            font-style: italic;
+            color: #7f786b;
+            border-left: 1px dashed #d6cebf;
+            padding-left: 2rem;
+        }
+        .scene-note p {
+            margin-bottom: 0.6rem;
+        }
+        .footer-note {
+            text-align: center;
+            padding: 3rem 0.5rem 2rem;
+            border-top: 1px solid #ddd8cf;
+            margin-top: 1rem;
+            color: #6f6a60;
+            font-size: 0.95rem;
+        }
+        .footer-note .leyu-link {
+            font-weight: 450;
+            font-size: 1rem;
+        }
+        @media (max-width: 640px) {
+            .hero {
+                min-height: 50vh;
+                padding: 3rem 1.2rem;
+            }
+            .container {
+                padding: 2rem 1rem;
+            }
+            .intro-block {
+                padding: 1.8rem 1.2rem;
+            }
+            .card {
+                flex: 1 1 100%;
+            }
+            .scene-note {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .scene-note .right {
+                text-align: left;
+                border-left: none;
+                border-top: 1px dashed #d6cebf;
+                padding-left: 0;
+                padding-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <h1>︎  <span>leyu</span> · 行路</h1>
+    <div class="sub">一片安静而开阔的数字角落<br>为那些愿意放慢脚步、仔细阅读的人所留</div>
+</section>
+
+<div class="container">
+
+    <div class="intro-block">
+        <h2>在节奏之外</h2>
+        <p>许多事情都依赖于一个简洁的念头——比如，想拥有一个可以随时回望的、带着温和质地的地方。<a href="https://cold-leyu.com.cn">leyu</a> 便是出于这样的想法。它不刻意喧哗，也没有密集的信息流，更像一处经过整理的林间空地，你走进来，可以坐下，也可以继续往前走。</p>
+        <p>这里的内容倾向于安静与延续。无论是一段文字、一篇笔记，还是一次不经意的发现，都不必追赶所谓的时效，更看重的是阅读时的直觉与共鸣。</p>
+    </div>
+
+    <div class="card-grid">
+        <div class="card">
+            <div class="num">01</div>
+            <h3>少即是多</h3>
+            <p>没有繁复的推送与弹窗，页面本身保持干净。焦点回到内容本身，不被多余的交互干扰。</p>
+        </div>
+        <div class="card">
+            <div class="num">02</div>
+            <h3>自然的延伸</h3>
+            <p>从主题到语气都保留手写的痕迹，不追求完美修饰，反而留下呼吸的间隙。</p>
+        </div>
+        <div class="card">
+            <div class="num">03</div>
+            <h3>长久的陪伴</h3>
+            <p>一个站点可以缓慢生长，像树一样。今天读到的，也许几个月后再看，仍然有新的意味。</p>
+        </div>
+    </div>
+
+    <div class="faq-summary">
+        <h3>也许你会好奇 · 片段</h3>
+        <div class="faq-item">
+            <span class="q">什么是 leyu ？</span>
+            <span class="a">一个个人视角的内容站，以文字与图像记录日常感知，不追逐热点，没有广告。</span>
+        </div>
+        <div class="faq-item">
+            <span class="q">适合谁？</span>
+            <span class="a">喜欢安静浏览、不介意页面加载后只有一段话或一张图的人。</span>
+        </div>
+        <div class="faq-item">
+            <span class="q">更新频率？</span>
+            <span class="a">没有固定时间表。当积累了一些值得分享的片段，便会出现在那里。</span>
+        </div>
+        <div class="faq-item">
+            <span class="q">如何访问？</span>
+            <span class="a">通过浏览器直接打开 <a href="https://cold-leyu.com.cn">leyu</a> 即可，无需注册，也无须登录。</span>
+        </div>
+    </div>
+
+    <div class="scene-note">
+        <div class="left">
+            <p><strong>一个可能的场景</strong></p>
+            <p>周末下午，泡一杯茶，打开这个页面。没有催促你点击的按钮，也没有浮窗。只有一段文字、几行句子，或者一张恰好合心意的照片。你读完，关掉页面，像翻完一本小册子。</p>
+            <p>这种体验在今天显得有点奢侈，但也因此变得更加可贵。</p>
+        </div>
+        <div class="right">
+            “好的网站<br>像一间有光的房间”
+        </div>
+    </div>
+
+    <div class="footer-note">
+        <p>如果你也偏爱这种节奏，不妨来 <a href="https://cold-leyu.com.cn" class="leyu-link">leyu</a> 停留片刻。</p>
+        <p style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.6;">从一次安静的阅读开始，不必刻意寻找什么。</p>
+    </div>
+
+</div>
+
+</body>
+</html>

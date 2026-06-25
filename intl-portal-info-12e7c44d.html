@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>再访 1xbet · 收藏与持续关注</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #1e1e1e;
+            background-color: #f4f6fa;
+            line-height: 1.65;
+        }
+
+        /* ---- 深色头图 ---- */
+        .hero {
+            background: linear-gradient(145deg, #0b1424 0%, #1b2b44 100%);
+            padding: 3.5rem 1.5rem 3rem;
+            text-align: center;
+            color: #e6edf5;
+            border-bottom: 4px solid #ffb347;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero .tagline {
+            font-size: 1.15rem;
+            color: #c8d6e5;
+            max-width: 700px;
+            margin: 0.5rem auto 1.2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        .hero .sub {
+            font-size: 0.95rem;
+            color: #a2b7d5;
+            margin-top: 0.2rem;
+        }
+
+        .hero .sub a {
+            color: #ffb347;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #ffb347;
+        }
+
+        .hero .sub a:hover {
+            color: #ffd08a;
+            border-bottom: 1px solid #ffd08a;
+        }
+
+        /* ---- 浅色正文区 ---- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        .intro-card {
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 2rem 2.2rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+            margin-bottom: 2.5rem;
+        }
+
+        .intro-card h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #0b1a2e;
+            border-left: 5px solid #ffb347;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .intro-card p {
+            margin-bottom: 1rem;
+            color: #2e3b4e;
+        }
+
+        .intro-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 强调色链接 */
+        .intro-card a, .faq-item a {
+            color: #c96b1f;
+            text-decoration: underline;
+            text-decoration-color: #c96b1f;
+            text-underline-offset: 3px;
+            font-weight: 500;
+        }
+
+        .intro-card a:hover, .faq-item a:hover {
+            color: #a45412;
+            text-decoration-color: #a45412;
+        }
+
+        /* ---- 三个场景模块 ---- */
+        .scenes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            margin: 2.5rem 0;
+        }
+
+        .scene-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 1.5rem 1.8rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border-top: 4px solid transparent;
+        }
+
+        .scene-card:nth-child(1) { border-top-color: #ffb347; }
+        .scene-card:nth-child(2) { border-top-color: #4f7a9e; }
+        .scene-card:nth-child(3) { border-top-color: #2b5c3a; }
+
+        .scene-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+        }
+
+        .scene-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #121f33;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .scene-card p {
+            font-size: 0.95rem;
+            color: #37475c;
+            margin-bottom: 0.4rem;
+        }
+
+        .scene-card .scene-note {
+            font-size: 0.88rem;
+            color: #657a93;
+            border-left: 3px solid #d0dae8;
+            padding-left: 0.8rem;
+            margin-top: 0.8rem;
+        }
+
+        /* ---- 常见说明 (FAQ 摘要) ---- */
+        .faq-section {
+            margin-top: 2rem;
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 2.2rem 2.2rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+        }
+
+        .faq-section h3 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #0b1a2e;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e6eaef;
+            padding: 1rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item .q {
+            font-weight: 600;
+            color: #1e2c3f;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item .a {
+            color: #3e4f64;
+            font-size: 0.95rem;
+            margin-top: 0.25rem;
+        }
+
+        .faq-item .a a {
+            font-weight: 500;
+        }
+
+        /* ---- 提示区 (自然收藏提醒) ---- */
+        .reminder-box {
+            background-color: #eef2f8;
+            border-radius: 16px;
+            padding: 1.3rem 1.8rem;
+            margin: 2rem 0 0.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .reminder-box span {
+            font-size: 0.98rem;
+            color: #1f334a;
+        }
+
+        .reminder-box .bookmark-hint {
+            background: #ffffff;
+            border: 1px solid #ccd8e6;
+            border-radius: 30px;
+            padding: 0.4rem 1.2rem;
+            font-size: 0.9rem;
+            color: #1f334a;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* ---- 页脚 ---- */
+        .page-footer {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            color: #6d7f97;
+            font-size: 0.85rem;
+            border-top: 1px solid #dce3ed;
+            margin-top: 1rem;
+        }
+
+        .page-footer a {
+            color: #c96b1f;
+            text-decoration: none;
+            border-bottom: 1px dotted #c96b1f;
+        }
+
+        /* ---- 响应式 ---- */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+
+            .hero .tagline {
+                font-size: 1rem;
+            }
+
+            .scenes-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .intro-card, .faq-section {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .reminder-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 2.5rem 1rem 2rem;
+            }
+
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .container {
+                padding: 1.8rem 1rem 3rem;
+            }
+
+            .scene-card {
+                padding: 1.5rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- 深色头图 -->
+<section class="hero">
+    <h1>再次访问 &middot; 收藏 &middot; 持续关注</h1>
+    <div class="tagline">为经常回来的你准备的一份简明指引</div>
+    <div class="sub">
+        从这里开始 · <a href="https://intl-portal-1xbet.com">1xbet</a> 主页
+    </div>
+</section>
+
+<!-- 浅色正文区 -->
+<div class="container">
+
+    <!-- 核心介绍 -->
+    <div class="intro-card">
+        <h2>为什么需要再次访问</h2>
+        <p>
+            很多时候我们第一次浏览某个平台后，想再过几天回来看看最新动态，或者单纯想保留一个顺手的位置。
+            <strong>收藏</strong>一个页面、记住它的结构，可以帮助我们更有效率地返回。
+        </p>
+        <p>
+            当你再次回到 <a href="https://intl-portal-1xbet.com">1xbet</a> 时，你可能会想先看看首页有什么新变化，或者直接从熟悉的模块开始。
+            以下三个场景就是围绕这种“再次访问”的习惯整理的，希望能帮你节省一些翻找的时间。
+        </p>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <div class="scenes-grid">
+        <div class="scene-card">
+            <h3>📌 场景一 · 快速回顾</h3>
+            <p>隔了几天回来，不记得上次看到哪里了？</p>
+            <p>可以扫一眼主功能区，通常展示的内容都有比较清晰的分类标题。</p>
+            <div class="scene-note">把页面加到书签，下次回来直接点开就好。</div>
+        </div>
+
+        <div class="scene-card">
+            <h3>🔖 场景二 · 收藏与标签</h3>
+            <p>大多数浏览器都支持为页面添加书签。你可以为 <a href="https://intl-portal-1xbet.com">1xbet</a> 单独建一个文件夹，或者放到书签栏。</p>
+            <p>收藏夹里存一个链接，下次访问就不用重新搜索或输入网址。</p>
+            <div class="scene-note">建议加上简短备注，比如「常用」或「国际站」。</div>
+        </div>
+
+        <div class="scene-card">
+            <h3>🔄 场景三 · 持续关注</h3>
+            <p>如果你会定期回来看看内容或服务更新，不妨把页面设为默认启动页之一。</p>
+            <p>保持关注意味着你不需要每次重新适应布局，熟悉的位置和导航能让你更快找到想看的版块。</p>
+            <div class="scene-note">也可以结合浏览器扩展，定期提醒自己回来看看。</div>
+        </div>
+    </div>
+
+    <!-- 常见说明 (FAQ 摘要) -->
+    <div class="faq-section">
+        <h3>💬 常见说明</h3>
+
+        <div class="faq-item">
+            <div class="q">▪ 再次访问时页面和上次不一样？</div>
+            <div class="a">网站首页会不定期调整模块布局或推荐内容，这是正常更新。主要入口和导航通常保持稳定。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="q">▪ 如何确认我访问的是最新页面？</div>
+            <div class="a">建议每次通过收藏的链接进入，或直接访问 <a href="https://intl-portal-1xbet.com">1xbet</a>，然后按 Ctrl+F5 刷新（Windows）或 Cmd+Shift+R（Mac）以清除缓存。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="q">▪ 收藏的链接有时打不开怎么办？</div>
+            <div class="a">可以先检查网络连接，或者把链接复制到浏览器地址栏重新打开。如果仍不行，可以手动输入域名访问。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="q">▪ 我需要注册或登录才能看到主要内容吗？</div>
+            <div class="a">首页的介绍、导航和部分公开信息不需要登录即可浏览。部分个性化功能可能需要账户支持。</div>
+        </div>
+    </div>
+
+    <!-- 提示区 (自然收藏提醒) -->
+    <div class="reminder-box">
+        <span>🔁 如果你觉得这个页面值得保留，可以通过浏览器的「添加书签」或「收藏」功能保存。</span>
+        <span class="bookmark-hint">⭐ 收藏提示 · 常回常新</span>
+    </div>
+
+</div>
+
+<!-- 页脚 -->
+<footer class="page-footer">
+    一份整理过的说明 · <a href="https://intl-portal-1xbet.com">1xbet</a> · 内容仅供一般参考
+</footer>
+
+</body>
+</html>
